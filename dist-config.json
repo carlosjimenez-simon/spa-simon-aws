@@ -1,0 +1,36 @@
+{
+  "CallerReference": "mi-spa-ref-001", 
+  "Aliases": { "Quantity": 0 },
+  "DefaultRootObject": "index.html",
+  "Origins": {
+    "Quantity": 1,
+    "Items": [
+      {
+        "Id": "S3-Origin",
+        "DomainName": "simon-dev-refactor-spa-test.s3.amazonaws.com",
+        "S3OriginConfig": { "OriginAccessIdentity": "" },
+        "OriginAccessControlId": "E1309IJOFY0ISZ"
+      }
+    ]
+  },
+  "DefaultCacheBehavior": {
+    "TargetOriginId": "S3-Origin",
+    "ForwardedValues": {
+      "QueryString": false,
+      "Cookies": { "Forward": "none" }
+    },
+    "TrustedSigners": { "Enabled": false, "Quantity": 0 },
+    "ViewerProtocolPolicy": "redirect-to-https",
+    "MinTTL": 0
+  },
+  "CacheBehaviors": { "Quantity": 0 },
+  "Comment": "Mi SPA en React",
+  "Enabled": true,
+  "CustomErrorResponses": {
+    "Quantity": 2,
+    "Items": [
+      { "ErrorCode": 404, "ResponsePagePath": "/index.html", "ResponseCode": "200", "ErrorCachingMinTTL": 10 },
+      { "ErrorCode": 403, "ResponsePagePath": "/index.html", "ResponseCode": "200", "ErrorCachingMinTTL": 10 }
+    ]
+  }
+}
