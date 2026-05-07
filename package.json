@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "npm run build && aws s3 sync dist/ s3://simon-dev-refactor-spa-test --delete",
-    "invalidate": "aws cloudfront create-invalidation --distribution-id TUENVWG0RAPTOBZ_ID --paths '/*'",
+    "invalidate": "aws cloudfront create-invalidation --distribution-id TUENVWG0RAPTOBZ --paths '/*'",
     "deploy-full": "npm run deploy && npm run invalidate"
   },
   "dependencies": {
